@@ -1,0 +1,17 @@
+<article class="section">
+  <header class="section-header">
+    <h1 class="section-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="section-info">
+    {{ content }}
+  </div>
+
+  <div class="section-articles">
+    {% assign subarticles = site.articles | where:'section', page.title %}
+    {% for article in subarticles %}
+      <a href={{ article.url }}>{{ article.title }}</a>
+    {% endfor %}
+  </div>
+
+</article>

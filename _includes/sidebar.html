@@ -1,0 +1,15 @@
+<ul>
+  {% for section in site.sections %}
+    <li> {{ section.title }} </li>
+    <ul>
+      {% assign subarticles = site.articles | where:'section', section.title %}
+      {% for article in subarticles  %}
+      <li><a href={{article.url}}>{{ article.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</ul>
+
+{% for article in dogs %}
+  {{article.section}}
+{% endfor %}

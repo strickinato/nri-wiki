@@ -1,0 +1,40 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Wiki Proof Of Concept
+email: aaronstrick@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  After being inspired by from RALPH BODDENER's talk at FutureStack 15 about
+  incorporating git processes (like pull requests) into meta discussion
+  about process and maintaining a wiki, this is a POC for a jekyll wiki
+  to potentially be used at NoRedInk.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://strickinato.github.io./wiki-poc" # the base hostname & protocol for your site
+twitter_username: strickinato
+github_username:  strickinato
+collections:
+  sections:
+    output: true
+    permalink: /:path
+  articles:
+    output: true
+    permalink: /:collection/:title
+defaults:
+  -
+    scope:
+      path: _sections
+    values:
+      layout: section
+  -
+    scope:
+      path: _articles
+    values:
+      layout: article
+
+# Build settings
+markdown: kramdown
