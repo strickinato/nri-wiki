@@ -10,7 +10,7 @@
   <div class="section-articles">
     {% assign subarticles = site.articles | where:'section', page.title %}
     {% for article in subarticles %}
-      <a href={{ article.url }}>{{ article.title }}</a>
+      <a href="{{ article.url }}/">{{ article.title }}</a>
     {% endfor %}
   </div>
 
